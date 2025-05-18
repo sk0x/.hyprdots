@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+alias my_ip="ip address | grep -o \"inet 192.*/\" | awk '{ print \$2 }' | tr / ' ' | xargs"
+# programs
+alias vim="$VIM"
+alias tempmongo="docker run --rm -p 27017:27017 --name server mongo"
+

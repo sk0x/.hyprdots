@@ -1,0 +1,114 @@
+{
+    "position": "top",
+    "margin-bottom": 0,
+    "modules-left": [
+        "clock",
+        "custom/separator",
+        "hyprland/workspaces",
+    ],
+    "modules-center": [ "hyprland/window" ],
+    "modules-right": [
+        "temperature",
+        "memory",
+        "cpu",
+        "pulseaudio",
+        "pulseaudiomic",
+        "network",
+        "tray",
+        "custom/separator",
+        "custom/powermenu"
+    ],
+    "custom/separator": {
+        "exec": "echo \"|\"",
+        "format": "{}",
+        "tooltip": false
+    },
+    "tray": {
+        "icon-size": 16,
+        "spacing": 8
+    },
+    "clock": {
+        "format": " 󰸗 {:%d %B  %H:%M} ",
+        "interval": 1,
+        "tooltip": false,
+    },
+    "hyprland/workspaces": {
+        "format": "{icon}",
+        "separate-outputs": false,
+        "active-only": false,
+        "all-outputs": false,
+        "format-icons": {
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+        }
+    },
+    "hyprland/window": {
+        "format": "{}"
+    },
+    "network": {
+        "tooltip": true,
+        "format-wifi": "   ",
+        "rotate": 0,
+        "format-ethernet": " 󰈀 ",
+        "tooltip-format": "Network: <big><b>{essid}</b></big>\nSignal strength: <b>{signaldBm}dBm ({signalStrength}%)</b>\nFrequency: <b>{frequency}MHz</b>\nInterface: <b>{ifname}</b>\nIP: <b>{ipaddr}/{cidr}</b>\nGateway: <b>{gwaddr}</b>\nNetmask: <b>{netmask}</b>",
+        "format-linked": "󰈀 {ifname} (No IP)",
+        "format-disconnected": "󰖪 ",
+        "tooltip-format-disconnected": "Disconnected",
+        "interval": 2,
+    },
+    "temperature": {
+        "format": " {icon} {temperatureC}°C ",
+        "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        "format-icons": [
+            "",
+            "",
+            ""
+        ]
+    },
+    "memory": {
+        "format": "󰫗 {}% ",
+        "tooltip": "false"
+    },
+    "cpu": {
+        "format": " {usage}% ",
+        "tooltip": "false"
+    },
+    "pulseaudio": {
+        "format": " {volume}%",
+        "scroll-step": 1,
+        "on-click": "pavucontrol"
+    },
+    "pulseaudiomic": {
+        "format": "{format_source}",
+        "format-source": "\uf130 {volume}%",
+        "format-source-muted": "\uf131 Muted",
+        "on-click": "pactl set-source-mute @DEFAULT_SOURCE@ toggle",
+        "on-scroll-up": "pactl set-source-volume @DEFAULT_SOURCE@ +5%",
+        "on-scroll-down": "pactl set-source-volume @DEFAULT_SOURCE@ -5%",
+        "scroll-step": 5
+    },
+    "battery": {
+        "format": "{capacity}% {icon}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "custom/powermenu": {
+        "format": "  ",
+        "tooltip": false,
+        "on-click": "exec wlogout -p layer-shell"
+    }
+}

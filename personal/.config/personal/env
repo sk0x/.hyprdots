@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+export STOW_FOLDERS="bin,nvim,tmux,personal,i3,zsh"
+export MACOSX_DEPLOYMENT_TARGET=10.15
+export HYPRSHOT_DIR=~/Pictures
+
+addToPath(){
+	if [[ "$PATH" != *"$1"* ]]; then
+		export PATH=$PATH:$1
+	fi
+}
+
+addToPathFront(){
+	if [[ "$PATH" != *"$1"* ]]; then
+		export PATH=$1:$PATH
+	fi
+}
+
+
