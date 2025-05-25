@@ -1,8 +1,7 @@
 #!/usr/bin/env bash
 export STOW_FOLDERS="bin,nvim,tmux,personal,i3,zsh"
 export MACOSX_DEPLOYMENT_TARGET=10.15
-export HYPRSHOT_DIR=~/Pictures
-export XDG_DATA_DIRS="$HOME/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:$XDG_DATA_DIRS"
+export HYPRSHOT_DIR=~/pictures
 
 addToPath(){
 	if [[ "$PATH" != *"$1"* ]]; then

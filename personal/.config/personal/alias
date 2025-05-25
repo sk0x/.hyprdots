@@ -2,5 +2,10 @@
 alias my_ip="ip address | grep -o \"inet 192.*/\" | awk '{ print \$2 }' | tr / ' ' | xargs"
 # programs
 alias vim="$VIM"
-alias tempmongo="docker run --rm -p 27017:27017 --name server mongo"
+alias mongodb="docker run --rm -p 27017:27017 --name mongodb mongo"
+alias postgresdb="docker run --rm --name postgresdb -e POSTGRES_PASSWORD=postpass postgres"
+#alias mysqldb="docker run --rm --name mysql-server -e MYSQL_ROOT_PASSWORD=rootpass -e MYSQL_DATABASE=mysqldb -e MYSQL_USER=myusername -e MYSQL_PASSWORD=myuserpass -p 3306:3306 mysql",
+
+# git pass
+alias gitpass="clipcopy ~/git_password.txt"
 
