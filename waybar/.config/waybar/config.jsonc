@@ -3,6 +3,7 @@
     "margin-bottom": 0,
     "modules-left": [
         "hyprland/workspaces",
+        "mpris"
     ],
     "modules-center": [
         "hyprland/window"
@@ -14,6 +15,7 @@
         "pulseaudio",
         "pulseaudiomic",
         "network",
+        "bluetooth",
         "tray",
         "clock",
         "custom/powermenu"
@@ -45,6 +47,22 @@
             "10": "10",
         }
     },
+    "bluetooth": {
+        "format": "<span font='icon'></span> {status}",
+        "format-off": "<span font='icon'></span>",
+        "on-click": "~/.config/waybar/scripts/rofi-bluetooth &",
+        "tooltip-format": "Bluetooth status: {status}"
+    },
+    "mpris": {
+        "format": " {status_icon} {dynamic}",
+        "interval": 1,
+        "dynamic-len": 40,
+        "status-icons": {
+            "playing": "▶",
+            "paused": "⏸",
+            "stopped": ""
+        }
+	},
     "hyprland/window": {
         "format": "{}",
         "max-length": 30,

@@ -1,0 +1,23 @@
+#!/bin/bash
+
+if [ "$1" == "mongo" ]; then
+    echo "Starting temporary MongoDB container..."
+    docker run --rm --name mongodb -p 27017:27017 mongo
+elif [ "$1" == "postgres" ]; then
+    echo "Starting temporary PostgreSQL container..."
+    docker run --rm --name postgresql -e POSTGRES_PASSWORD=mypassword \
+        -e POSTGRES_USER=myuser -e POSTGRES_DB=postgresdb \
+        -p 5432:5432 postgres
+elif [ "$1" == "mysql" ]; then
+    echo "Starting temporary MySQL container..."
+    echo "Connection URL: jdbc:mysql://sqluser:sqlpassword@localhost:3306/mysqldb"
+    docker run --rm --name mysql_container \
+        -e MYSQL_ROOT_PASSWORD=mypassword \
+        -e MYSQL_DATABASE=mysqldb \
+        -e MYSQL_USER=sqluser \
+        -e MYSQL_PASSWORD=sqlpassword \
+        -p 3306:3306 mysql:latest
+else
+    echo "Error: Need a valid database name after the command."
+    echo "Usage: ./startdb.sh [mongo|postgres|mysql]"
+fi

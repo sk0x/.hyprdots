@@ -3,7 +3,7 @@
 if [[ $# -eq 1 ]]; then
 	selected=$1
 else
-    selected=$(find ~/ ~/work ~/projects ~/assignments -mindepth 1 -maxdepth 1 \( -name ".*" \) -prune -o -type d -print | fzf)
+    selected=$(find ~/ ~/work ~/projects ~/security -mindepth 1 -maxdepth 1 \( -name ".*" \) -prune -o -type d -print | fzf)
 fi
 
 

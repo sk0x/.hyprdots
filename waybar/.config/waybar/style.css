@@ -68,6 +68,13 @@ button {
     background-color: #bd3c2d;
 }
 
+#mpris {
+    padding: 0 10px;
+    background-color: #000;
+    color: #fff;
+    margin-left: 10px;
+}
+
 #window,
 #clock,
 #tray,
@@ -115,3 +122,122 @@ label:focus {
     font-family: sans-serif;
 }
 */
+* {
+    font-family: "Jetbrains Mono NerdFont";
+    font-size: 14px;
+    border-radius: 5px;
+}
+
+window#waybar {
+    background-color: transparent;
+    border-bottom: 0px;
+    color: #000;
+    transition-property: background-color;
+    transition-duration: .5s;
+
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+}
+
+.modules-right {
+    margin: 3px 3px 0 0;
+}
+.modules-center {
+    margin: 3px 0 0 0;
+}
+.modules-left {
+    margin: 3px 0 0 8px;
+}
+
+button {
+    border: none;
+}
+
+#workspaces {
+    background-color: #000;
+}
+
+#workspaces button {
+    padding: 0 5px;
+    background-color: transparent;
+    color: #fff;
+    border-radius: 5px;
+}
+
+#workspaces button:first-child {
+    border-radius: 5px 5px 5px 5px;
+}
+#workspaces button:last-child {
+    border-radius: 5px 5px 5px 5px;
+}
+
+#workspaces button:hover {
+    color: #fff;
+}
+#workspaces button.active{
+    background-color: #1ebaab;
+}
+
+#workspaces button.focused {
+    background-color: #2dbd81;
+}
+
+#workspaces button.urgent {
+    background-color: #bd3c2d;
+}
+
+#window,
+#bluetooth,
+#clock,
+#tray,
+#network,
+#pulseaudio,
+#cpu,
+#temperature,
+#memory,
+#custom-powermenu {
+    padding: 0 10px;
+    background-color: #000;
+    color: #fff;
+    margin-right: 5px;
+}
+
+/*
+.modules-left > widget:first-child > #workspaces {
+    margin-left: 0;
+}
+
+.modules-right > widget:last-child > #workspaces {
+    margin-right: 0;
+}
+
+@keyframes blink {
+    to {
+        background-color: #282828;
+        color: #ebdbb2;
+    }
+}
+
+label:focus {
+    background-color: #000000;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+#tray menu {
+    font-family: sans-serif;
+}
+*/
+
