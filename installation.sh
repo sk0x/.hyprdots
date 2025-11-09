@@ -8,11 +8,10 @@ makepkg -si
 
 # remove folder
 cd ~
-rm -rf paru
+rm -rf yay 
 
 # installing apps
-sudo pacman -S stow zsh fzf tmux network-manager-applet waybar hyprpaper neovim rofi nwg-look ripgrep \
-    pipewire-pulse pavucontrol
+sudo pacman -S stow zsh fzf tmux network-manager-applet waybar hyprpaper neovim rofi nwg-look ripgrep
 yay -S hyprshot wlogout
 
 # install browser
